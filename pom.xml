@@ -28,35 +28,36 @@
   </dependencies>
 
   <build>
-  <plugins>
-      <plugin>
-          <groupId>com.lazerycode.jmeter</groupId>
-          <artifactId>jmeter-maven-plugin</artifactId>
-          <version>3.0.0</version>
-          <executions>
-              <execution>
-                 <id>configuration</id>
-                 <goals>
-                    <goal>configure</goal>
-                 </goals>
-             </execution>
+<plugins>
+<plugin>
+    <groupId>com.lazerycode.jmeter</groupId>
+    <artifactId>jmeter-maven-plugin</artifactId>
+    <version>3.4.0</version>
+    <executions>
+        <!-- Generate JMeter configuration -->
+        <execution>
+            <id>configuration</id>
+            <goals>
+                <goal>configure</goal>
+            </goals>
+        </execution>
         <!-- Run JMeter tests -->
-             <execution>
-                  <id>jmeter-tests</id>
-                  <goals>
-                      <goal>jmeter</goal>
-                  </goals>
-             </execution>
+        <execution>
+            <id>jmeter-tests</id>
+            <goals>
+                <goal>jmeter</goal>
+            </goals>
+        </execution>
         <!-- Fail build on errors in test -->
-             <execution>
-                   <id>jmeter-check-results</id>
-                   <goals>
-                      <goal>results</goal>
-                   </goals>
-             </execution>
-          </executions>
-  </plugin>
-  </plugins>
+        <execution>
+            <id>jmeter-check-results</id>
+            <goals>
+                <goal>results</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+</plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
